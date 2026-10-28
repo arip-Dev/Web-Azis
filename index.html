@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INSW - Single Sign On &amp; PPBJ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ==================== STEP 1: SSO LOGIN PAGE ==================== -->
+  <section id="step-1" class="view-section active">
+    <div class="sso-wrapper">
+      <div class="sso-bg-decor"></div>
+
+      <div class="sso-container">
+        <!-- LEFT CONTENT: MFA Announcement & Guides -->
+        <div class="sso-left">
+          <!-- Top Navy Banner -->
+          <div class="mfa-banner-wrap">
+            <div class="mfa-banner">
+              <div class="mfa-circuit-lines"></div>
+              <div class="mfa-dots-grid"></div>
+
+              <!-- 3D Cloud Lock Illustration -->
+              <div class="mfa-cloud-illustration" aria-hidden="true">
+                <svg viewBox="0 0 160 135" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <ellipse cx="80" cy="114" rx="54" ry="12" fill="#38BDF8" opacity="0.35"/>
+                  <path d="M35 103L80 120L125 103L80 86L35 103Z" fill="#1E3A8A" stroke="#63B3ED" stroke-width="1.2"/>
+                  <path d="M46 92C33.85 92 24 82.15 24 70C24 58.92 32.19 49.75 42.86 48.22C46.5 34.86 58.73 25 73.25 25C89.56 25 103.02 37.39 104.58 53.29C113.84 54.78 121 62.81 121 72.5C121 83.27 112.27 92 101.5 92H46Z" fill="#3B82F6"/>
+                  <rect x="64" y="42" width="26" height="32" rx="5" fill="none" stroke="#CBD5E1" stroke-width="5"/>
+                  <rect x="57" y="58" width="40" height="33" rx="6" fill="#F8FAFC"/>
+                  <circle cx="77" cy="71" r="3.5" fill="#1E3A8A"/>
+                  <path d="M77 74.5V81" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round"/>
+                  <path d="M98 66L108 70V79C108 85.5 103.7 91.2 98 93C92.3 91.2 88 85.5 88 79V70L98 66Z" fill="#FBBF24" stroke="#FEF3C7" stroke-width="1.5"/>
+                  <path d="M94 79.5L97 82.5L103 76.5" stroke="#92400E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+
+              <!-- Banner Text -->
+              <div class="mfa-banner-content">
+                <h1 class="mfa-title">
+                  Mandatory<br />
+                  <span>MFA System</span> <span class="text-insw-yellow">INSW</span>
+                </h1>
+                <div class="mfa-notice-pill">
+                  <div class="mfa-bell-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                      <path d="M12 3C8.686 3 6 5.686 6 9V14L4 16V17H20V16L18 14V9C18 5.686 15.314 3 12 3Z" fill="#60A5FA"/>
+                      <path d="M10 18C10 19.105 10.895 20 12 20C13.105 20 14 19.105 14 18H10Z" fill="#93C5FD"/>
+                    </svg>
+                  </div>
+                  <p>
+                    Pengguna diwajibkan segera mengatur<br />
+                    <em>Multi-Factor Authentication (MFA)</em><br />
+                    melalui menu <em>Security Settings</em> di <strong>sso.insw.go.id</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Overlapping yellow CTA pill -->
+            <div class="mfa-cta-badge">
+              <span>SEGERA ATUR MFA ANDA</span>
+              <span class="exclamation-mark">!</span>
+            </div>
+          </div>
+          <!-- Two MFA Method Cards -->
+          <div class="mfa-cards-grid">
+            <!-- Card 1: Passkeys -->
+            <div class="mfa-card">
+              <div class="mfa-card-header header-navy">
+                <div class="mfa-step-number num-navy">1</div>
+                <div class="mfa-header-titles">
+                  <h3>Passkeys</h3>
+                  <div class="recommend-badge">
+                    <span class="thumb-circle">👍</span>
+                    <span>Sangat Direkomendasikan</span>
+                  </div>
+                </div>
+              </div>
+              <div class="mfa-card-body">
+                <div class="mfa-card-Art" aria-hidden="true">
+                  <svg viewBox="0 0 130 110" width="110" height="92">
+                    <rect x="14" y="26" width="76" height="50" rx="4" fill="#1E293B" stroke="#475569" stroke-width="2"/>
+                    <rect x="18" y="30" width="68" height="42" rx="2" fill="#0F172A"/>
+                    <path d="M45 36L59 41V51C59 60 53 66 45 69C37 66 31 60 31 51V41L45 36Z" fill="#16A34A" opacity="0.25" stroke="#22C55E" stroke-width="1.5"/>
+                    <circle cx="45" cy="52" r="9" fill="none" stroke="#4ADE80" stroke-width="1.5" stroke-dasharray="3 2"/>
+                    <path d="M6 76H98L104 84H0L6 76Z" fill="#94A3B8"/>
+                    <rect x="68" y="16" width="26" height="48" rx="4" fill="#0284C7" stroke="#38BDF8" stroke-width="1.8"/>
+                    <rect x="71" y="20" width="20" height="39" rx="2" fill="#E0F2FE"/>
+                    <path d="M78 36L80 38L85 33" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M75 64C75 58 84 55 91 58L98 72L82 76L75 64Z" fill="#FDBA74"/>
+                  </svg>
+                </div>
+                <ul class="mfa-feature-list">
+                  <li>
+                    <span class="check-bullet">✓</span>
+                    <span>Login praktis <strong>tanpa</strong> <em>username</em> dan <em>password</em></span>
+                  </li>
+                  <li>
+                    <span class="check-bullet">✓</span>
+                    <span>Cukup gunakan PIN, <em>Screenlock</em>, atau Biometrik perangkat</span>
+                  </li>
+                  <li>
+                    <span class="check-bullet">✓</span>
+                    <span>Bisa didaftarkan di banyak perangkat sekaligus</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Card 2: Authenticator -->
+            <div class="mfa-card">
+              <div class="mfa-card-header header-yellow">
+                <div class="mfa-step-number num-yellow">2</div>
+                <div class="mfa-header-titles">
+                  <h3 class="title-authenticator">Authenticator</h3>
+                </div>
+              </div>
+              <div class="mfa-card-body">
+                <div class="mfa-card-Art" aria-hidden="true">
+                  <svg viewBox="0 0 130 110" width="110" height="92">
+                    <rect x="14" y="20" width="54" height="68" rx="5" fill="#1E3A8A" stroke="#60A5FA" stroke-width="1.5"/>
+                    <rect x="19" y="28" width="44" height="54" rx="3" fill="#EFF6FF"/>
+                    <circle cx="41" cy="44" r="8" fill="#3B82F6"/>
+                    <rect x="25" y="57" width="32" height="5" rx="2" fill="#93C5FD"/>
+                    <rect x="54" y="22" width="58" height="18" rx="4" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+                    <text x="60" y="34" fill="#0F172A" font-size="9" font-weight="800" letter-spacing="2">******</text>
+                    <circle cx="72" cy="54" r="7" fill="#FDBA74"/>
+                    <path d="M58 82C58 69 64 63 72 63C80 63 86 69 86 82H58Z" fill="#EF4444"/>
+                    <rect x="64" y="72" width="22" height="13" rx="2" fill="#E2E8F0" stroke="#64748B" stroke-width="1.2"/>
+                  </svg>
+                </div>
+                <ul class="mfa-feature-list">
+                  <li>
+                    <span class="check-bullet">✓</span>
+                    <span>Login menggunakan <em>username</em> dan <em>password</em> seperti biasa</span>
+                  </li>
+                  <li>
+                    <span class="check-bullet">✓</span>
+                    <span>Ditambah verifikasi 6 digit kode dari aplikasi <em>Authenticator</em> yang diperbarui setiap 30 detik</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Bottom Email Backup & QR Guide Bar -->
+          <div class="mfa-bottom-bar">
+            <div class="mfa-bottom-item">
+              <div class="email-badge-icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64" width="52" height="52">
+                  <rect x="2" y="2" width="60" height="60" rx="12" fill="#0B2255"/>
+                  <path d="M14 22L32 12L50 22V48C50 49.1 49.1 50 48 50H16C14.9 50 14 49.1 14 48V22Z" fill="#E2E8F0"/>
+                  <rect x="20" y="18" width="24" height="22" rx="2" fill="#FBBF24"/>
+                  <text x="32" y="33" text-anchor="middle" fill="#0B2255" font-size="14" font-weight="800">@</text>
+                  <path d="M14 24L32 36L50 24" fill="none" stroke="#0B2255" stroke-width="2.5"/>
+                </svg>
+              </div>
+              <div class="mfa-bottom-text">
+                <h4>Gunakan e-mail sebagai cadangan</h4>
+                <p>Jangan jadikan e-mail sebagai media<br />utama MFA</p>
+              </div>
+            </div>
+
+            <div class="mfa-bottom-item">
+              <div class="qr-badge-box" aria-hidden="true">
+                <svg viewBox="0 0 80 80" width="56" height="56">
+                  <rect x="2" y="2" width="76" height="76" rx="10" fill="#0B2255"/>
+                  <rect x="8" y="8" width="64" height="64" rx="6" fill="#FFFFFF"/>
+                  <rect x="12" y="12" width="16" height="16" fill="none" stroke="#0F172A" stroke-width="3"/>
+                  <rect x="17" y="17" width="6" height="6" fill="#0F172A"/>
+                  <rect x="52" y="12" width="16" height="16" fill="none" stroke="#0F172A" stroke-width="3"/>
+                  <rect x="57" y="17" width="6" height="6" fill="#0F172A"/>
+                  <rect x="12" y="52" width="16" height="16" fill="none" stroke="#0F172A" stroke-width="3"/>
+                  <rect x="17" y="57" width="6" height="6" fill="#0F172A"/>
+                  <rect x="34" y="14" width="5" height="5" fill="#0F172A"/>
+                  <rect x="42" y="20" width="5" height="8" fill="#0F172A"/>
+                  <rect x="16" y="35" width="8" height="5" fill="#0F172A"/>
+                  <rect x="54" y="36" width="10" height="6" fill="#0F172A"/>
+                  <rect x="35" y="54" width="7" height="7" fill="#0F172A"/>
+                  <rect x="54" y="54" width="12" height="10" fill="#0F172A"/>
+                  <path d="M37 35H44V39H41V42H43V45H39V48H36V41H34V38H37V35Z" fill="#0F172A"/>
+                </svg>
+              </div>
+              <div class="mfa-bottom-text">
+                <h4>Butuh panduan?</h4>
+                <p>Scan QR atau akses tautan berikut:</p>
+                <a href="https://linktr.ee/CC_150679" target="_blank" rel="noopener noreferrer" class="qr-link">https://linktr.ee/CC_150679</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- RIGHT CONTENT: Sign in Card -->
+        <div class="sso-right">
+          <div class="signin-card">
+            <div class="signin-brand">
+              <div class="insw-logo-box">
+                <span class="insw-logo-text">INSW</span>
+                <span class="insw-logo-sub">Indonesia National Single Window</span>
+              </div>
+              <div class="nswid-provider">
+                <div class="nswid-line1">
+                  <strong>NSW</strong><span class="id-red-badge">id</span> <em>provided for</em>
+                </div>
+                <div class="nswid-line2">
+                  <em>Indonesia National Single Window</em>
+                </div>
+              </div>
+            </div>
+
+            <h2 class="signin-heading">Sign in</h2>
+            <p class="signin-subheading">Using your <strong>NSWid</strong> Account</p>
+
+            <form id="login-form" class="signin-form" novalidate>
+              <div class="form-control-group">
+                <input
+                  type="text"
+                  id="login-username"
+                  class="signin-input"
+                  placeholder="Username"
+                  autocomplete="username"
+                  required
+                />
+              </div>
+
+              <div class="signin-options-row">
+                <label class="remember-label">
+                  <input type="checkbox" id="remember-me" />
+                  <span>Remember me</span>
+                </label>
+                <a href="#forgot" class="forgot-link" id="forgot-password-link">Forgot your password?</a>
+              </div>
+
+              <button type="submit" class="btn-signin-next">
+                <span>Next</span>
+                <span class="next-arrows">&raquo;</span>
+              </button>
+            </form>
+
+            <div class="signin-secondary-links">
+              <a href="#register" class="sec-link" id="create-account-link">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
+                <span>Create a New Account</span>
+              </a>
+              <a href="#options" class="sec-link" id="other-options-link">
+                <span>Other Options</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 13v-2H8v-2h4V9l4 3-4 3z"/>
+                </svg>
+              </a>
+            </div>
+
+            <hr class="signin-divider" />
+
+            <button type="button" class="btn-passkey" id="btn-passkey-login">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#0B2255" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="7.5" cy="15.5" r="4.5"/>
+                <path d="M10.7 12.3L19 4"/>
+                <path d="M16 7l3 3"/>
+                <path d="M18 5l2 2"/>
+              </svg>
+              <span>Sign in with Passkey</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== STEP 2: BERANDA PPBJ ==================== -->
+  <section id="step-2" class="view-section">
+    <div class="app-top-navy-bar"></div>
+    <div class="ppbj-page-bg">
+      <div class="ppbj-card">
+        <div class="ppbj-card-top">
+          <span class="ppbj-corner-label">PPBJ</span>
+        </div>
+
+        <div class="ppbj-header-center">
+          <h1>Beranda Permohonan Pemberitahuan</h1>
+          <h2>Perolehan atau Pengeluaran Barang Kena Pajak atau Jasa Kena Pajak</h2>
+        </div>
+
+        <div class="ppbj-toolbar">
+          <div class="search-input-wrap" id="search-box-wrap" hidden>
+            <input
+              type="text"
+              id="table-search-input"
+              placeholder="Cari Nomor Pengajuan, Nomor PPBJ, atau Lawan Transaksi..."
+            />
+          </div>
+          <button type="button" class="btn-toolbar-search" id="btn-toggle-search" title="Cari Data PPBJ">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="10" r="4"/>
+              <path d="M12 14v6"/>
+              <path d="M10 18h4"/>
+            </svg>
+          </button>
+          <button type="button" class="btn-toolbar-add" id="btn-add-ppbj" title="Tambah Pengajuan PPBJ Baru">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#FFFFFF" stroke-width="2.8" stroke-linecap="round">
+              <path d="M12 5v14M5 12h14"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="ppbj-table-responsive">
+          <table class="ppbj-table">
+            <thead>
+              <tr>
+                <th class="col-no">No</th>
+                <th class="col-nopeng">Nomor Pengajuan</th>
+                <th class="col-noppbj">Nomor PPBJ</th>
+                <th class="col-tgl">Tanggal PPBJ</th>
+                <th class="col-ref">Referensi PPBJ</th>
+                <th class="col-lawan">Lawan Transaksi</th>
+                <th class="col-objek">Objek Transaksi</th>
+                <th class="col-status">Status</th>
+                <th class="col-aksi">Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="ppbj-table-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ==================== STEP 3: PENGAJUAN PPBJ FORM ==================== -->
+  <section id="step-3" class="view-section">
+    <div class="app-top-navy-bar"></div>
+    <div class="breadcrumb-bar">
+      <button type="button" class="breadcrumb-link" id="btn-back-to-ppbj">PPBJ</button>
+      <span class="breadcrumb-sep">/</span>
+    </div>
+
+    <div class="ppbj-page-bg">
+      <div class="ppbj-card step3-card">
+        <div class="wizard-tabs" role="tablist">
+          <button type="button" class="wizard-tab active" data-tab="perusahaan" role="tab" aria-selected="true">
+            <div class="wizard-icon">
+              <svg viewBox="0 0 48 48" width="42" height="42" fill="none">
+                <path d="M8 42H40" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                <rect x="12" y="10" width="14" height="32" rx="1" fill="currentColor" fill-opacity="0.12" stroke="currentColor" stroke-width="2.5"/>
+                <path d="M26 20L36 16V42H26V20Z" fill="currentColor" fill-opacity="0.2" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+                <rect x="16" y="15" width="2.5" height="2.5" fill="currentColor"/>
+                <rect x="20.5" y="15" width="2.5" height="2.5" fill="currentColor"/>
+                <rect x="16" y="20" width="2.5" height="2.5" fill="currentColor"/>
+                <rect x="20.5" y="20" width="2.5" height="2.5" fill="currentColor"/>
+                <rect x="16" y="25" width="2.5" height="2.5" fill="currentColor"/>
+                <rect x="20.5" y="25" width="2.5" height="2.5" fill="currentColor"/>
+                <rect x="17.5" y="35" width="3.5" height="7" fill="currentColor"/>
+              </svg>
+            </div>
+            <span class="wizard-label">Data Perusahaan</span>
+          </button>
+
+          <button type="button" class="wizard-tab" data-tab="kontrak" role="tab" aria-selected="false">
+            <div class="wizard-icon">
+              <svg viewBox="0 0 48 48" width="42" height="42" fill="none">
+                <rect x="12" y="8" width="22" height="30" rx="3" stroke="currentColor" stroke-width="2.5"/>
+                <path d="M17 16H27M17 22H27M17 28H23" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M28 34L37 25L41 29L32 38L27 39L28 34Z" fill="currentColor"/>
+              </svg>
+            </div>
+            <span class="wizard-label">Data Kontrak</span>
+          </button>
+
+          <button type="button" class="wizard-tab" data-tab="dokumen" role="tab" aria-selected="false">
+            <div class="wizard-icon">
+              <svg viewBox="0 0 48 48" width="42" height="42" fill="none">
+                <rect x="14" y="8" width="20" height="24" rx="2" stroke="currentColor" stroke-width="2.2"/>
+                <line x1="18" y1="14" x2="28" y2="14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                <path d="M10 22H22L25 25H38V39C38 40.1 37.1 41 36 41H12C10.9 41 10 40.1 10 39V22Z" fill="currentColor"/>
+              </svg>
+            </div>
+            <span class="wizard-label">Data Dokumen</span>
+          </button>
+
+          <button type="button" class="wizard-tab" data-tab="rincian" role="tab" aria-selected="false">
+            <div class="wizard-icon">
+              <svg viewBox="0 0 48 48" width="42" height="42" fill="none">
+                <rect x="12" y="10" width="24" height="31" rx="3" stroke="currentColor" stroke-width="2.5"/>
+                <rect x="18" y="7" width="12" height="6" rx="2" fill="currentColor"/>
+                <line x1="18" y1="20" x2="30" y2="20" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                <line x1="18" y1="27" x2="30" y2="27" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                <line x1="18" y1="34" x2="30" y2="34" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span class="wizard-label">Rincian</span>
+          </button>
+
+          <button type="button" class="wizard-tab" data-tab="informasi" role="tab" aria-selected="false">
+            <div class="wizard-icon">
+              <svg viewBox="0 0 48 48" width="42" height="42" fill="none">
+                <rect x="12" y="9" width="22" height="30" rx="2" stroke="currentColor" stroke-width="2.3"/>
+                <line x1="16" y1="20" x2="29" y2="20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <line x1="16" y1="26" x2="29" y2="26" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M36 18L38 20L42 16M36 28L38 30L42 26" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="wizard-label">Informasi Terkait</span>
+          </button>
+
+          <button type="button" class="wizard-tab" data-tab="checkpoint" role="tab" aria-selected="false">
+            <div class="wizard-icon">
+              <svg viewBox="0 0 48 48" width="42" height="42" fill="none">
+                <rect x="12" y="8" width="18" height="28" rx="2" fill="currentColor" fill-opacity="0.18" stroke="currentColor" stroke-width="2.2"/>
+                <rect x="18" y="14" width="18" height="26" rx="2" fill="#FFFFFF" stroke="currentColor" stroke-width="2.2"/>
+                <circle cx="35" cy="36" r="5" fill="currentColor"/>
+                <path d="M33 36L34.5 37.5L37.5 34.5" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="wizard-label">CheckPoint</span>
+          </button>
+        </div>
+        <div class="pengajuan-subheader">
+          <h2 class="pengajuan-title">Pengajuan PPBJ</h2>
+          <p class="pengajuan-id">ID Pengajuan : <span id="display-id-pengajuan"></span></p>
+        </div>
+
+        <form id="form-ppbj" class="pengajuan-form-box" novalidate>
+          <div class="tab-pane active" id="tab-perusahaan">
+            <div class="company-split-grid">
+              <!-- Left Column: Pengusaha KPBPB -->
+              <div class="company-col col-left">
+                <h3 class="section-subtitle">Pengusaha KPBPB</h3>
+
+                <div class="form-row two-cols">
+                  <div class="form-field">
+                    <label for="kpbpb-npwp">NPWP 16</label>
+                    <input type="text" id="kpbpb-npwp" class="input-readonly" placeholder="" />
+                  </div>
+                  <div class="form-field">
+                    <label for="kpbpb-nitku">NITKU</label>
+                    <input type="text" id="kpbpb-nitku" class="input-editable" placeholder="" />
+                  </div>
+                </div>
+
+                <div class="form-field">
+                  <label for="kpbpb-nama">Nama Perusahaan</label>
+                  <input type="text" id="kpbpb-nama" class="input-readonly" placeholder="" />
+                </div>
+
+                <div class="form-field">
+                  <label for="kpbpb-alamat">Alamat</label>
+                  <textarea id="kpbpb-alamat" class="input-readonly" rows="3"></textarea>
+                </div>
+
+                <div class="form-row two-cols">
+                  <div class="form-field">
+                    <label for="kpbpb-kpp">KPP</label>
+                    <div class="custom-select-wrap">
+                      <select id="kpbpb-kpp">
+                        <option value="">Pilih...</option>
+                        <option value="KPP Pratama Batam Utara">KPP Pratama Batam Utara</option>
+                        <option value="KPP Pratama Batam Selatan">KPP Pratama Batam Selatan</option>
+                        <option value="KPP Madya Batam">KPP Madya Batam</option>
+                        <option value="KPP Pratama Tanjung Pinang">KPP Pratama Tanjung Pinang</option>
+                      </select>
+                      <span class="select-divider"></span>
+                      <span class="select-chevron">
+                        <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+                          <path d="M5 7.5L10 12.5L15 7.5"/>
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="form-field">
+                    <label for="kpbpb-lokasi">Lokasi KPBPB</label>
+                    <div class="custom-select-wrap">
+                      <select id="kpbpb-lokasi">
+                        <option value="">Pilih...</option>
+                        <option value="Batam">Batam</option>
+                        <option value="Bintan">Bintan</option>
+                        <option value="Karimun">Karimun</option>
+                        <option value="Sabang">Sabang</option>
+                      </select>
+                      <span class="select-divider"></span>
+                      <span class="select-chevron">
+                        <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+                          <path d="M5 7.5L10 12.5L15 7.5"/>
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Right Column: Lawan Transaksi -->
+              <div class="company-col col-right">
+                <h3 class="section-subtitle">Lawan Transaksi</h3>
+
+                <div class="form-row three-cols-lawan">
+                  <div class="form-field">
+                    <label for="lawan-jenis">Jenis Identitas</label>
+                    <div class="custom-select-wrap">
+                      <select id="lawan-jenis">
+                        <option value="NPWP" selected>NPWP</option>
+                        <option value="NITKU">NITKU</option>
+                        <option value="KTP">KTP / NIK</option>
+                        <option value="PASPOR">Paspor</option>
+                      </select>
+                      <span class="select-divider"></span>
+                      <span class="select-chevron">
+                        <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+                          <path d="M5 7.5L10 12.5L15 7.5"/>
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="form-field">
+                    <label for="lawan-nitku">Nomor Identitas (NITKU)</label>
+                    <input type="text" id="lawan-nitku" class="input-editable" placeholder="" />
+                  </div>
+
+                  <div class="form-field">
+                    <label for="lawan-npwp">NPWP 16</label>
+                    <input type="text" id="lawan-npwp" class="input-readonly" placeholder="" />
+                  </div>
+                </div>
+
+                <div class="form-field">
+                  <label for="lawan-nama">Nama Perusahaan</label>
+                  <input type="text" id="lawan-nama" class="input-readonly" placeholder="" />
+                </div>
+
+                <div class="form-field">
+                  <label for="lawan-alamat">Alamat</label>
+                  <textarea id="lawan-alamat" class="input-readonly" rows="3"></textarea>
+                </div>
+
+                <div class="form-field">
+                  <label for="lawan-kpp">KPP</label>
+                  <div class="custom-select-wrap">
+                    <select id="lawan-kpp">
+                      <option value="">Pilih...</option>
+                      <option value="KPP Wajib Pajak Besar Satu">KPP Wajib Pajak Besar Satu</option>
+                      <option value="KPP Wajib Pajak Besar Dua">KPP Wajib Pajak Besar Dua</option>
+                      <option value="KPP Perusahaan Masuk Bursa">KPP Perusahaan Masuk Bursa</option>
+                      <option value="KPP Madya Jakarta Selatan I">KPP Madya Jakarta Selatan I</option>
+                      <option value="KPP Pratama Jakarta Pasar Minggu">KPP Pratama Jakarta Pasar Minggu</option>
+                    </select>
+                    <span class="select-divider"></span>
+                    <span class="select-chevron">
+                      <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M5 7.5L10 12.5L15 7.5"/>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom Section: Data Penandatangan -->
+            <div class="signer-section">
+              <h3 class="section-subtitle">Data Penandatangan</h3>
+              <div class="form-row five-cols-signer">
+                <div class="form-field">
+                  <label for="signer-nama">Nama</label>
+                  <input type="text" id="signer-nama" class="input-editable" />
+                </div>
+                <div class="form-field">
+                  <label for="signer-jabatan">Jabatan</label>
+                  <input type="text" id="signer-jabatan" class="input-editable" />
+                </div>
+                <div class="form-field">
+                  <label for="signer-telepon">No. Telepon</label>
+                  <input type="text" id="signer-telepon" class="input-editable" />
+                </div>
+                <div class="form-field">
+                  <label for="signer-email">Email</label>
+                  <input type="email" id="signer-email" class="input-editable" />
+                </div>
+                <div class="form-field">
+                  <label for="signer-kota">Kota Penandatanganan</label>
+                  <div class="custom-select-wrap">
+                    <select id="signer-kota">
+                      <option value="">Pilih...</option>
+                      <option value="Batam">Batam</option>
+                      <option value="Jakarta">Jakarta</option>
+                      <option value="Tanjung Pinang">Tanjung Pinang</option>
+                      <option value="Bintan">Bintan</option>
+                      <option value="Surabaya">Surabaya</option>
+                    </select>
+                    <span class="select-divider"></span>
+                    <span class="select-chevron">
+                      <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M5 7.5L10 12.5L15 7.5"/>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Secondary Tabs -->
+          <div class="tab-pane" id="tab-kontrak">
+            <h3 class="section-subtitle">Data Kontrak / Perjanjian</h3>
+            <div class="form-row two-cols">
+              <div class="form-field">
+                <label for="kontrak-nomor">Nomor Kontrak</label>
+                <input type="text" id="kontrak-nomor" class="input-editable" placeholder="Masukkan Nomor Kontrak" />
+              </div>
+              <div class="form-field">
+                <label for="kontrak-objek">Objek Transaksi</label>
+                <div class="custom-select-wrap">
+                  <select id="kontrak-objek">
+                    <option value="PEMASUKAN BKP DARI TLDDP" selected>PEMASUKAN BKP DARI TLDDP</option>
+                    <option value="PEROLEHAN JKP DARI TLDDP">PEROLEHAN JKP DARI TLDDP</option>
+                    <option value="PENGELUARAN BKP KE TLDDP">PENGELUARAN BKP KE TLDDP</option>
+                  </select>
+                  <span class="select-divider"></span>
+                  <span class="select-chevron">
+                    <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <path d="M5 7.5L10 12.5L15 7.5"/>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane" id="tab-dokumen">
+            <h3 class="section-subtitle">Data Dokumen Pelengkap</h3>
+            <p class="checkpoint-desc">Unggah atau lengkapi dokumen pelengkap PPBJ setelah menyimpan Data Perusahaan.</p>
+          </div>
+
+          <div class="tab-pane" id="tab-rincian">
+            <h3 class="section-subtitle">Rincian Barang Kena Pajak / Jasa Kena Pajak</h3>
+            <p class="checkpoint-desc">Daftar rincian BKP/JKP yang diajukan dalam permohonan PPBJ.</p>
+          </div>
+
+          <div class="tab-pane" id="tab-informasi">
+            <h3 class="section-subtitle">Informasi Terkait</h3>
+            <p class="checkpoint-desc">Informasi tambahan terkait transaksi perolehan atau pengeluaran BKP/JKP.</p>
+          </div>
+
+          <div class="tab-pane" id="tab-checkpoint">
+            <h3 class="section-subtitle">CheckPoint Pengajuan PPBJ</h3>
+            <p class="checkpoint-desc">Pastikan seluruh data Perusahaan, Kontrak, Dokumen, dan Rincian telah terisi dengan lengkap dan benar sebelum mengirim pengajuan.</p>
+          </div>
+
+          <div class="form-footer-actions">
+            <button type="button" class="btn-fill-sample" id="btn-fill-sample" title="Isi otomatis contoh data perusahaan">
+              Isi Contoh Data
+            </button>
+            <button type="submit" class="btn-simpan" id="btn-simpan-ppbj">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+                <polyline points="17 21 17 13 7 13 7 21"/>
+                <polyline points="7 3 7 8 15 8"/>
+              </svg>
+              <span>Simpan</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Step Switcher Pill (for easy testing & navigation across Step 1, 2, 3) -->
+  <div class="step-switcher-pill" aria-label="Navigasi Step">
+    <span class="switcher-title">Tampilan:</span>
+    <button type="button" class="step-pill-btn active" data-target="step-1">Step 1: Login SSO</button>
+    <button type="button" class="step-pill-btn" data-target="step-2">Step 2: Beranda PPBJ</button>
+    <button type="button" class="step-pill-btn" data-target="step-3">Step 3: Form Pengajuan</button>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast-notification" class="toast-notification" hidden></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+</body>
+</html>
