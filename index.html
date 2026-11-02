@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>INSW - Single Sign On &amp; PPBJ</title>
+  <title>INSW - Single Sign On &amp; Pengajuan PK/PB</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
@@ -279,12 +279,12 @@
     <div class="ppbj-page-bg">
       <div class="ppbj-card">
         <div class="ppbj-card-top">
-          <span class="ppbj-corner-label">PPBJ</span>
+          <span class="ppbj-corner-label">Elnusa Fabrikasi Konstruksi</span>
         </div>
 
         <div class="ppbj-header-center">
-          <h1>Beranda Permohonan Pemberitahuan</h1>
-          <h2>Perolehan atau Pengeluaran Barang Kena Pajak atau Jasa Kena Pajak</h2>
+          <h1>Beranda Permohonan</h1>
+          <h2>Panjar Kerja/Permintaan Bayar</h2>
         </div>
 
         <div class="ppbj-toolbar">
@@ -292,7 +292,7 @@
             <input
               type="text"
               id="table-search-input"
-              placeholder="Cari Nomor Pengajuan, Nomor PPBJ, atau Lawan Transaksi..."
+              placeholder="Cari Nomor Pengajuan, Referensi, atau Lawan Transaksi..."
             />
           </div>
           <button type="button" class="btn-toolbar-search" id="btn-toggle-search" title="Cari Data PPBJ">
@@ -315,9 +315,8 @@
               <tr>
                 <th class="col-no">No</th>
                 <th class="col-nopeng">Nomor Pengajuan</th>
-                <th class="col-noppbj">Nomor PPBJ</th>
-                <th class="col-tgl">Tanggal PPBJ</th>
-                <th class="col-ref">Referensi PPBJ</th>
+                <th class="col-tgl">Tanggal</th>
+                <th class="col-ref">Referensi</th>
                 <th class="col-lawan">Lawan Transaksi</th>
                 <th class="col-objek">Objek Transaksi</th>
                 <th class="col-status">Status</th>
@@ -334,7 +333,7 @@
   <section id="step-3" class="view-section">
     <div class="app-top-navy-bar"></div>
     <div class="breadcrumb-bar">
-      <button type="button" class="breadcrumb-link" id="btn-back-to-ppbj">PPBJ</button>
+      <button type="button" class="breadcrumb-link" id="btn-back-to-ppbj">Elnusa Fabrikasi Konstruksi</button>
       <span class="breadcrumb-sep">/</span>
     </div>
 
@@ -419,48 +418,27 @@
           </button>
         </div>
         <div class="pengajuan-subheader">
-          <h2 class="pengajuan-title">Pengajuan PPBJ</h2>
-          <p class="pengajuan-id">ID Pengajuan : <span id="display-id-pengajuan"></span></p>
+          <h2 class="pengajuan-title">Pengajuan PK/PB</h2>
         </div>
 
         <form id="form-ppbj" class="pengajuan-form-box" novalidate>
           <div class="tab-pane active" id="tab-perusahaan">
             <div class="company-split-grid">
-              <!-- Left Column: Pengusaha KPBPB -->
+              <!-- Left Column: User Pengajuan -->
               <div class="company-col col-left">
-                <h3 class="section-subtitle">Pengusaha KPBPB</h3>
+                <h3 class="section-subtitle">User Pengajuan</h3>
 
                 <div class="form-row two-cols">
                   <div class="form-field">
-                    <label for="kpbpb-npwp">NPWP 16</label>
-                    <input type="text" id="kpbpb-npwp" class="input-readonly" placeholder="" />
+                    <label for="pk-divisi">Divisi</label>
+                    <input type="text" id="pk-divisi" class="input-editable" value="ELNUSA FABRIKASI KONSTRUKSI" placeholder="ELNUSA FABRIKASI KONSTRUKSI" />
                   </div>
                   <div class="form-field">
-                    <label for="kpbpb-nitku">NITKU</label>
-                    <input type="text" id="kpbpb-nitku" class="input-editable" placeholder="" />
-                  </div>
-                </div>
-
-                <div class="form-field">
-                  <label for="kpbpb-nama">Nama Perusahaan</label>
-                  <input type="text" id="kpbpb-nama" class="input-readonly" placeholder="" />
-                </div>
-
-                <div class="form-field">
-                  <label for="kpbpb-alamat">Alamat</label>
-                  <textarea id="kpbpb-alamat" class="input-readonly" rows="3"></textarea>
-                </div>
-
-                <div class="form-row two-cols">
-                  <div class="form-field">
-                    <label for="kpbpb-kpp">KPP</label>
+                    <label for="pk-jenis-dokumen">Judul Dokumen</label>
                     <div class="custom-select-wrap">
-                      <select id="kpbpb-kpp">
-                        <option value="">Pilih...</option>
-                        <option value="KPP Pratama Batam Utara">KPP Pratama Batam Utara</option>
-                        <option value="KPP Pratama Batam Selatan">KPP Pratama Batam Selatan</option>
-                        <option value="KPP Madya Batam">KPP Madya Batam</option>
-                        <option value="KPP Pratama Tanjung Pinang">KPP Pratama Tanjung Pinang</option>
+                      <select id="pk-jenis-dokumen">
+                        <option value="PANJAR KERJA" selected>PANJAR KERJA</option>
+                        <option value="PERMINTAAN BAYAR">PERMINTAAN BAYAR</option>
                       </select>
                       <span class="select-divider"></span>
                       <span class="select-chevron">
@@ -470,16 +448,97 @@
                       </span>
                     </div>
                   </div>
+                </div>
+
+                <div class="form-field">
+                  <label for="pk-responsible">Responsible Person</label>
+                  <input type="text" id="pk-responsible" class="input-editable" placeholder="Contoh: TRI KOMALANINGRUM AJI" />
+                </div>
+
+                <div class="form-field">
+                  <label for="pk-business-area">Business Area (ops)</label>
+                  <input type="text" id="pk-business-area" class="input-editable" placeholder="Contoh: Business Support" />
+                </div>
+
+                <div class="form-field">
+                  <label for="pk-project">Project (ops)</label>
+                  <input type="text" id="pk-project" class="input-editable" placeholder="Contoh: PERBAIKAN FASILITAS KANTOR RI 106" />
+                </div>
+
+                <div class="form-row two-cols">
+                  <div class="form-field">
+                    <label for="pk-cost-center">CostCenter / WBS (A)</label>
+                    <input type="text" id="pk-cost-center" class="input-editable" placeholder="Contoh: 200-H-EFK" />
+                  </div>
+                  <div class="form-field">
+                    <label for="pk-project-activity">Project Activity (B)</label>
+                    <input type="text" id="pk-project-activity" class="input-editable" placeholder="Contoh: OFFICE FACILITIES" />
+                  </div>
+                </div>
+
+                <div class="form-row three-cols-lawan">
+                  <div class="form-field">
+                    <label for="pk-gl-account">GL Account (C)</label>
+                    <input type="text" id="pk-gl-account" class="input-editable" placeholder="Contoh: 7190300000" />
+                  </div>
+                  <div class="form-field">
+                    <label for="pk-gl-ket">Keterangan GL (D)</label>
+                    <input type="text" id="pk-gl-ket" class="input-editable" placeholder="Opsional" />
+                  </div>
+                  <div class="form-field">
+                    <label for="pk-special-gl">Special G/L (O, E, Z, I)*</label>
+                    <input type="text" id="pk-special-gl" class="input-editable" placeholder="Contoh: E" />
+                  </div>
+                </div>
+              </div>
+              <!-- Right Column: Informasi Surat & Catatan Pembayaran -->
+              <div class="company-col col-right">
+                <h3 class="section-subtitle">Informasi Surat &amp; Pembayaran</h3>
+
+                <div class="form-row three-cols-lawan">
+                  <div class="form-field">
+                    <label for="pk-nomor-surat">Nomor Surat</label>
+                    <input type="text" id="pk-nomor-surat" class="input-editable" placeholder="019/PK-COM/GS/I/2026" />
+                  </div>
 
                   <div class="form-field">
-                    <label for="kpbpb-lokasi">Lokasi KPBPB</label>
+                    <label for="pk-tanggal-surat">Tanggal Surat</label>
+                    <input type="text" id="pk-tanggal-surat" class="input-editable" placeholder="13/10/2026" />
+                  </div>
+
+                  <div class="form-field">
+                    <label for="pk-period">Period</label>
+                    <input type="text" id="pk-period" class="input-editable" placeholder="Oktober 2026" />
+                  </div>
+                </div>
+
+                <div class="form-field">
+                  <label for="pk-contact-person">Contact Person yang Dapat Dihubungi (Note 2)</label>
+                  <input type="text" id="pk-contact-person" class="input-editable" placeholder="Contoh: Tri Komalaningrum" />
+                </div>
+
+                <div class="form-field">
+                  <label for="pk-rekening">Rekening Transfer / Pembayaran (Note 3)</label>
+                  <input type="text" id="pk-rekening" class="input-editable" placeholder="Contoh: MANDIRI 1370004329856 a/n TRI KOMALANINGRUM AJI" />
+                </div>
+
+                <div class="form-field">
+                  <label for="pk-disposisi">Disposisi (Opsional)</label>
+                  <textarea id="pk-disposisi" class="input-editable" rows="2" placeholder="Catatan disposisi (kosongkan jika diisi manual saat cetak)"></textarea>
+                </div>
+
+                <div class="form-row two-cols">
+                  <div class="form-field">
+                    <label for="lawan-nama">Lawan Transaksi (Tabel Beranda)</label>
+                    <input type="text" id="lawan-nama" class="input-editable" placeholder="Contoh: ELNUSA TBK." />
+                  </div>
+                  <div class="form-field">
+                    <label for="kontrak-objek-quick">Objek Transaksi</label>
                     <div class="custom-select-wrap">
-                      <select id="kpbpb-lokasi">
-                        <option value="">Pilih...</option>
-                        <option value="Batam">Batam</option>
-                        <option value="Bintan">Bintan</option>
-                        <option value="Karimun">Karimun</option>
-                        <option value="Sabang">Sabang</option>
+                      <select id="kontrak-objek-quick">
+                        <option value="JKP" selected>JKP</option>
+                        <option value="BKP">BKP</option>
+                        <option value="PK/PB">PK/PB</option>
                       </select>
                       <span class="select-divider"></span>
                       <span class="select-chevron">
@@ -491,110 +550,65 @@
                   </div>
                 </div>
               </div>
-              <!-- Right Column: Lawan Transaksi -->
-              <div class="company-col col-right">
-                <h3 class="section-subtitle">Lawan Transaksi</h3>
+            </div>
 
-                <div class="form-row three-cols-lawan">
-                  <div class="form-field">
-                    <label for="lawan-jenis">Jenis Identitas</label>
-                    <div class="custom-select-wrap">
-                      <select id="lawan-jenis">
-                        <option value="NPWP" selected>NPWP</option>
-                        <option value="NITKU">NITKU</option>
-                        <option value="KTP">KTP / NIK</option>
-                        <option value="PASPOR">Paspor</option>
-                      </select>
-                      <span class="select-divider"></span>
-                      <span class="select-chevron">
-                        <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
-                          <path d="M5 7.5L10 12.5L15 7.5"/>
-                        </svg>
-                      </span>
-                    </div>
-                  </div>
-
-                  <div class="form-field">
-                    <label for="lawan-nitku">Nomor Identitas (NITKU)</label>
-                    <input type="text" id="lawan-nitku" class="input-editable" placeholder="" />
-                  </div>
-
-                  <div class="form-field">
-                    <label for="lawan-npwp">NPWP 16</label>
-                    <input type="text" id="lawan-npwp" class="input-readonly" placeholder="" />
-                  </div>
-                </div>
-
-                <div class="form-field">
-                  <label for="lawan-nama">Nama Perusahaan</label>
-                  <input type="text" id="lawan-nama" class="input-readonly" placeholder="" />
-                </div>
-
-                <div class="form-field">
-                  <label for="lawan-alamat">Alamat</label>
-                  <textarea id="lawan-alamat" class="input-readonly" rows="3"></textarea>
-                </div>
-
-                <div class="form-field">
-                  <label for="lawan-kpp">KPP</label>
-                  <div class="custom-select-wrap">
-                    <select id="lawan-kpp">
-                      <option value="">Pilih...</option>
-                      <option value="KPP Wajib Pajak Besar Satu">KPP Wajib Pajak Besar Satu</option>
-                      <option value="KPP Wajib Pajak Besar Dua">KPP Wajib Pajak Besar Dua</option>
-                      <option value="KPP Perusahaan Masuk Bursa">KPP Perusahaan Masuk Bursa</option>
-                      <option value="KPP Madya Jakarta Selatan I">KPP Madya Jakarta Selatan I</option>
-                      <option value="KPP Pratama Jakarta Pasar Minggu">KPP Pratama Jakarta Pasar Minggu</option>
-                    </select>
-                    <span class="select-divider"></span>
-                    <span class="select-chevron">
-                      <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
-                        <path d="M5 7.5L10 12.5L15 7.5"/>
-                      </svg>
-                    </span>
-                  </div>
-                </div>
+            <!-- Middle Section: Rincian Activity Description Table -->
+            <div class="activity-items-section">
+              <div class="activity-items-header">
+                <h3 class="section-subtitle" style="margin-bottom: 0;">Rincian Activity Description &amp; Biaya</h3>
+                <button type="button" class="btn-add-activity" id="btn-add-activity-row">+ Tambah Baris Rincian</button>
+              </div>
+              <div class="activity-table-wrap">
+                <table class="activity-input-table">
+                  <thead>
+                    <tr>
+                      <th style="width: 52px;">No</th>
+                      <th>Activity Description</th>
+                      <th style="width: 190px;">Total IDR</th>
+                      <th style="width: 160px;">Total USD</th>
+                      <th style="width: 64px;">Aksi</th>
+                    </tr>
+                  </thead>
+                  <tbody id="activity-rows-body"></tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="2" class="activity-total-label">Jumlah</td>
+                      <td id="activity-sum-idr" class="activity-total-val">0</td>
+                      <td id="activity-sum-usd" class="activity-total-val"></td>
+                      <td></td>
+                    </tr>
+                  </tfoot>
+                </table>
               </div>
             </div>
 
             <!-- Bottom Section: Data Penandatangan -->
             <div class="signer-section">
               <h3 class="section-subtitle">Data Penandatangan</h3>
-              <div class="form-row five-cols-signer">
+              <div class="form-row six-cols-signer">
                 <div class="form-field">
-                  <label for="signer-nama">Nama</label>
-                  <input type="text" id="signer-nama" class="input-editable" />
+                  <label for="pk-sign-disetujui">Disetujui</label>
+                  <input type="text" id="pk-sign-disetujui" class="input-editable" placeholder="Ari Wijaya" />
                 </div>
                 <div class="form-field">
-                  <label for="signer-jabatan">Jabatan</label>
-                  <input type="text" id="signer-jabatan" class="input-editable" />
+                  <label for="pk-sign-mengetahui">Mengetahui</label>
+                  <input type="text" id="pk-sign-mengetahui" class="input-editable" placeholder="Aditya" />
                 </div>
                 <div class="form-field">
-                  <label for="signer-telepon">No. Telepon</label>
-                  <input type="text" id="signer-telepon" class="input-editable" />
+                  <label for="pk-sign-diajukan">Diajukan Oleh</label>
+                  <input type="text" id="pk-sign-diajukan" class="input-editable" placeholder="Rina Wirastuti" />
                 </div>
                 <div class="form-field">
-                  <label for="signer-email">Email</label>
-                  <input type="email" id="signer-email" class="input-editable" />
+                  <label for="pk-sign-dibuat">Dibuat Oleh</label>
+                  <input type="text" id="pk-sign-dibuat" class="input-editable" placeholder="Tri Komalaningrum" />
                 </div>
                 <div class="form-field">
-                  <label for="signer-kota">Kota Penandatanganan</label>
-                  <div class="custom-select-wrap">
-                    <select id="signer-kota">
-                      <option value="">Pilih...</option>
-                      <option value="Batam">Batam</option>
-                      <option value="Jakarta">Jakarta</option>
-                      <option value="Tanjung Pinang">Tanjung Pinang</option>
-                      <option value="Bintan">Bintan</option>
-                      <option value="Surabaya">Surabaya</option>
-                    </select>
-                    <span class="select-divider"></span>
-                    <span class="select-chevron">
-                      <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
-                        <path d="M5 7.5L10 12.5L15 7.5"/>
-                      </svg>
-                    </span>
-                  </div>
+                  <label for="pk-kota">Kota Penandatanganan</label>
+                  <input type="text" id="pk-kota" class="input-editable" placeholder="Jakarta" />
+                </div>
+                <div class="form-field">
+                  <label for="pk-tanggal-ttd">Tanggal Tanda Tangan</label>
+                  <input type="text" id="pk-tanggal-ttd" class="input-editable" placeholder="13-Oct-26" />
                 </div>
               </div>
             </div>
@@ -628,27 +642,35 @@
 
           <div class="tab-pane" id="tab-dokumen">
             <h3 class="section-subtitle">Data Dokumen Pelengkap</h3>
-            <p class="checkpoint-desc">Unggah atau lengkapi dokumen pelengkap PPBJ setelah menyimpan Data Perusahaan.</p>
+            <p class="checkpoint-desc">Unggah atau lengkapi dokumen pelengkap PK/PB setelah menyimpan data pengajuan.</p>
           </div>
 
           <div class="tab-pane" id="tab-rincian">
-            <h3 class="section-subtitle">Rincian Barang Kena Pajak / Jasa Kena Pajak</h3>
-            <p class="checkpoint-desc">Daftar rincian BKP/JKP yang diajukan dalam permohonan PPBJ.</p>
+            <h3 class="section-subtitle">Rincian Activity Description &amp; Biaya</h3>
+            <p class="checkpoint-desc">Daftar rincian aktivitas yang diajukan dalam permohonan Panjar Kerja / Permintaan Bayar dapat diisi langsung pada tabel Rincian di tab Data Perusahaan.</p>
           </div>
 
           <div class="tab-pane" id="tab-informasi">
             <h3 class="section-subtitle">Informasi Terkait</h3>
-            <p class="checkpoint-desc">Informasi tambahan terkait transaksi perolehan atau pengeluaran BKP/JKP.</p>
+            <p class="checkpoint-desc">Informasi tambahan terkait pengajuan Panjar Kerja / Permintaan Bayar.</p>
           </div>
 
           <div class="tab-pane" id="tab-checkpoint">
-            <h3 class="section-subtitle">CheckPoint Pengajuan PPBJ</h3>
-            <p class="checkpoint-desc">Pastikan seluruh data Perusahaan, Kontrak, Dokumen, dan Rincian telah terisi dengan lengkap dan benar sebelum mengirim pengajuan.</p>
+            <h3 class="section-subtitle">CheckPoint Pengajuan PK/PB</h3>
+            <p class="checkpoint-desc">Pastikan seluruh data User Pengajuan, Nomor Surat, Rincian Aktivitas, dan Penandatangan telah terisi dengan lengkap dan benar sebelum menyimpan atau mencetak PDF.</p>
           </div>
 
           <div class="form-footer-actions">
-            <button type="button" class="btn-fill-sample" id="btn-fill-sample" title="Isi otomatis contoh data perusahaan">
+            <button type="button" class="btn-fill-sample" id="btn-fill-sample" title="Isi otomatis contoh data sesuai PDF Panjar Kerja">
               Isi Contoh Data
+            </button>
+            <button type="button" class="btn-cetak-pdf" id="btn-print-step3" title="Cetak atau Simpan sebagai PDF">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 6 2 18 2 18 9"/>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+                <rect x="6" y="14" width="12" height="8"/>
+              </svg>
+              <span>Cetak PDF</span>
             </button>
             <button type="submit" class="btn-simpan" id="btn-simpan-ppbj">
               <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -664,11 +686,155 @@
     </div>
   </section>
 
+  <!-- ==================== PRINTABLE PDF SHEET (MATCHING IMAGE.PNG, NO WATERMARK/STAMP) ==================== -->
+  <div id="print-sheet" class="print-sheet" aria-hidden="true">
+    <div class="pk-print-page">
+      <div class="pk-top-bar">
+        <div class="pk-brand">
+          <svg class="pk-brand-mark" viewBox="0 0 120 82" width="76" height="52" aria-hidden="true">
+            <polygon points="28,6 92,6 84,20 35,20" fill="#8cc63f"/>
+            <polygon points="10,27 28,6 35,20 24,33" fill="#b8d432"/>
+            <polygon points="10,49 24,33 35,48 28,64" fill="#005baa"/>
+            <polygon points="28,64 84,64 92,78 28,78" fill="#0072bc"/>
+            <polygon points="36,34 106,34 114,42 106,50 36,50" fill="#e11f26"/>
+          </svg>
+          <div class="pk-brand-text">
+            <span>elnusa</span>
+            <span>fabrikasi</span>
+            <span>konstruksi</span>
+          </div>
+        </div>
+        <h1 class="pk-doc-title" id="print-doc-title">PANJAR KERJA</h1>
+        <div class="pk-top-spacer"></div>
+      </div>
+
+      <div class="pk-meta-row">
+        <table class="pk-meta-left">
+          <tbody>
+            <tr>
+              <td class="pk-meta-label">Divisi</td>
+              <td class="pk-meta-colon">:</td>
+              <td class="pk-meta-val pk-bold" id="print-divisi">ELNUSA FABRIKASI KONSTRUKSI</td>
+            </tr>
+            <tr>
+              <td class="pk-meta-label">Responsible Person</td>
+              <td class="pk-meta-colon">:</td>
+              <td class="pk-meta-val pk-bold" id="print-responsible">TRI KOMALANINGRUM AJI</td>
+            </tr>
+            <tr>
+              <td class="pk-meta-label">Business Area (ops)</td>
+              <td class="pk-meta-colon">:</td>
+              <td class="pk-meta-val" id="print-business-area">Business Support</td>
+            </tr>
+            <tr class="pk-project-row">
+              <td class="pk-meta-label">Project (ops)</td>
+              <td class="pk-meta-colon">:</td>
+              <td class="pk-meta-val pk-bold pk-project-underline" id="print-project">PERBAIKAN FASILITAS KANTOR RI 106</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="pk-meta-right">
+          <tbody>
+            <tr>
+              <td class="pk-meta-rlabel">Nomor Surat</td>
+              <td class="pk-meta-colon">:</td>
+              <td class="pk-meta-rval pk-bold" id="print-nomor-surat">019/PK-COM/GS/I/2026</td>
+            </tr>
+            <tr>
+              <td class="pk-meta-rlabel">Tanggal Surat</td>
+              <td class="pk-meta-colon">:</td>
+              <td class="pk-meta-rval pk-bold" id="print-tanggal-surat">13/10/2026</td>
+            </tr>
+            <tr>
+              <td class="pk-meta-rlabel">Period</td>
+              <td class="pk-meta-colon">:</td>
+              <td class="pk-meta-rval pk-bold" id="print-period">Oktober 2026</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <table class="pk-main-table">
+        <thead>
+          <tr>
+            <th rowspan="2" class="col-no">No</th>
+            <th rowspan="2" class="col-activity">Activity Description</th>
+            <th rowspan="2" class="col-cc">CostCenter/WBS<br/>A</th>
+            <th rowspan="2" class="col-pa">Project Activity B</th>
+            <th colspan="2" class="col-gl-group">GL Account</th>
+            <th class="col-spgl-top">Special G/L</th>
+            <th colspan="2" class="col-total-group">Total</th>
+          </tr>
+          <tr>
+            <th class="col-gl-acc">Account (C)</th>
+            <th class="col-gl-ket">Keterangan (D)</th>
+            <th class="col-spgl-sub">(O, E, Z, I)<span class="pk-red-star">*</span></th>
+            <th class="col-idr">IDR</th>
+            <th class="col-usd">USD</th>
+          </tr>
+        </thead>
+        <tbody id="print-items-tbody"></tbody>
+        <tfoot>
+          <tr class="pk-jumlah-row">
+            <td colspan="7" class="pk-jumlah-label">J u m l a h</td>
+            <td class="pk-jumlah-idr" id="print-total-idr">4.000.000</td>
+            <td class="pk-jumlah-usd" id="print-total-usd"></td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <div class="pk-bottom-grid">
+        <div class="pk-disposisi-box">
+          <div class="pk-disposisi-title">DISPOSISI :</div>
+          <div class="pk-disposisi-content" id="print-disposisi"></div>
+        </div>
+
+        <div class="pk-note-sign-col">
+          <div class="pk-note-block">
+            <div class="pk-note-heading">NOTE:</div>
+            <ol class="pk-note-list">
+              <li>Pengajuan reimburs/penggantian dilampiri nota bukti pembayaran</li>
+              <li>Contact Person yang dapat dihubungi : <span id="print-contact-person">Tri Komalaningrum</span></li>
+              <li>Pengajuan agar dapat ditransfer : <strong id="print-rekening">MANDIRI 1370004329856 a/n TRI KOMALANINGRUM AJI</strong></li>
+            </ol>
+          </div>
+
+          <div class="pk-sign-date-line">
+            <span id="print-kota-tanggal">Jakarta, 13-Oct-26</span>
+          </div>
+
+          <div class="pk-signatures-grid">
+            <div class="pk-sign-col">
+              <div class="pk-sign-role">Disetujui,</div>
+              <div class="pk-sign-space"></div>
+              <div class="pk-sign-name" id="print-sign-disetujui">(Ari Wijaya)</div>
+            </div>
+            <div class="pk-sign-col">
+              <div class="pk-sign-role">Mengetahui,</div>
+              <div class="pk-sign-space"></div>
+              <div class="pk-sign-name" id="print-sign-mengetahui">(Aditya)</div>
+            </div>
+            <div class="pk-sign-col">
+              <div class="pk-sign-role">Diajukan Oleh,</div>
+              <div class="pk-sign-space"></div>
+              <div class="pk-sign-name" id="print-sign-diajukan">(Rina Wirastuti)</div>
+            </div>
+            <div class="pk-sign-col">
+              <div class="pk-sign-role">Dibuat Oleh,</div>
+              <div class="pk-sign-space"></div>
+              <div class="pk-sign-name" id="print-sign-dibuat">(Tri Komalaningrum)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Quick Step Switcher Pill (for easy testing & navigation across Step 1, 2, 3) -->
   <div class="step-switcher-pill" aria-label="Navigasi Step">
     <span class="switcher-title">Tampilan:</span>
     <button type="button" class="step-pill-btn active" data-target="step-1">Step 1: Login SSO</button>
-    <button type="button" class="step-pill-btn" data-target="step-2">Step 2: Beranda PPBJ</button>
+    <button type="button" class="step-pill-btn" data-target="step-2">Step 2: Beranda</button>
     <button type="button" class="step-pill-btn" data-target="step-3">Step 3: Form Pengajuan</button>
   </div>
 
@@ -676,7 +842,5 @@
   <div id="toast-notification" class="toast-notification" hidden></div>
 
   <script src="script.js"></script>
-</body>
-</html>
 </body>
 </html>

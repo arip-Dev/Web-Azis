@@ -1175,7 +1175,8 @@ textarea.input-editable {
   .company-col.col-right {
     padding-left: 0;
   }
-  .five-cols-signer {
+  .five-cols-signer,
+  .six-cols-signer {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -1185,10 +1186,436 @@ textarea.input-editable {
   .mfa-bottom-bar,
   .two-cols,
   .three-cols-lawan,
-  .five-cols-signer {
+  .five-cols-signer,
+  .six-cols-signer {
     grid-template-columns: 1fr;
   }
   .wizard-tabs {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ==================== STEP 3: ACTIVITY TABLE & PRINT BUTTON ==================== */
+.six-cols-signer {
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+
+.activity-items-section {
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 20px 0 22px;
+  margin-bottom: 18px;
+}
+
+.activity-items-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  gap: 12px;
+}
+
+.btn-add-activity {
+  height: 34px;
+  padding: 0 14px;
+  border-radius: 6px;
+  border: 1px solid #0b2559;
+  background: #0b2559;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-add-activity:hover {
+  background: #16377a;
+}
+
+.activity-table-wrap {
+  overflow-x: auto;
+}
+
+.activity-input-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #cbd5e1;
+  font-size: 13px;
+}
+
+.activity-input-table th,
+.activity-input-table td {
+  border: 1px solid #cbd5e1;
+  padding: 8px 10px;
+  vertical-align: middle;
+}
+
+.activity-input-table thead th {
+  background: #f1f5f9;
+  color: #1e293b;
+  font-weight: 700;
+  text-align: center;
+}
+
+.activity-input-table tbody td.cell-no {
+  text-align: center;
+  font-weight: 600;
+  color: #334155;
+}
+
+.activity-row-input {
+  width: 100%;
+  height: 34px;
+  padding: 0 10px;
+  border: 1px solid #d5dbe3;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 13px;
+  color: #1e293b;
+}
+
+.activity-row-input.num-input {
+  text-align: right;
+}
+
+.btn-remove-activity {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #fecaca;
+  background: #fef2f2;
+  color: #dc2626;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-remove-activity:hover {
+  background: #fee2e2;
+}
+
+.activity-total-label {
+  text-align: right;
+  font-weight: 700;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.activity-total-val {
+  text-align: right;
+  font-weight: 700;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.btn-cetak-pdf {
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 6px;
+  border: 1px solid #0b2559;
+  background: #0b2559;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-cetak-pdf:hover {
+  background: #17387a;
+}
+
+/* ==================== PRINT SHEET (HIDDEN ON SCREEN, SHOWN ON PRINT) ==================== */
+.print-sheet {
+  display: none;
+}
+
+.pk-print-page {
+  width: 100%;
+  background: #ffffff;
+  color: #000000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.pk-top-bar {
+  display: grid;
+  grid-template-columns: 260px 1fr 260px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.pk-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pk-brand-mark {
+  flex-shrink: 0;
+}
+
+.pk-brand-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1d5aa6;
+  line-height: 1.12;
+  letter-spacing: 0.4px;
+}
+
+.pk-doc-title {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  margin: 14px 0 0;
+  color: #000000;
+}
+
+.pk-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  gap: 24px;
+}
+
+.pk-meta-left,
+.pk-meta-right {
+  border-collapse: collapse;
+  font-size: 11px;
+}
+
+.pk-meta-left td,
+.pk-meta-right td {
+  padding: 1.5px 4px;
+  vertical-align: top;
+}
+
+.pk-meta-label {
+  width: 132px;
+  color: #111111;
+}
+
+.pk-meta-rlabel {
+  width: 96px;
+  text-align: right;
+  color: #111111;
+}
+
+.pk-meta-colon {
+  width: 10px;
+  text-align: center;
+}
+
+.pk-bold {
+  font-weight: 700;
+}
+
+.pk-project-row td {
+  padding-top: 8px;
+}
+
+.pk-project-underline {
+  border-bottom: 1px solid #222222;
+  min-width: 265px;
+  display: inline-block;
+  padding-bottom: 2px;
+}
+
+.pk-main-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1.6px solid #000000;
+  margin-bottom: 14px;
+  font-size: 11px;
+}
+
+.pk-main-table th,
+.pk-main-table td {
+  border: 1.2px solid #000000;
+  padding: 5px 7px;
+  color: #000000;
+}
+
+.pk-main-table thead th {
+  font-weight: 700;
+  text-align: center;
+  vertical-align: middle;
+  background: #ffffff;
+}
+
+.pk-main-table .col-no {
+  width: 36px;
+}
+
+.pk-main-table .col-activity {
+  width: 34%;
+}
+
+.pk-main-table .col-cc {
+  width: 105px;
+}
+
+.pk-main-table .col-pa {
+  width: 115px;
+}
+
+.pk-main-table .col-gl-acc {
+  width: 105px;
+}
+
+.pk-main-table .col-gl-ket {
+  width: 105px;
+}
+
+.pk-main-table .col-spgl-top,
+.pk-main-table .col-spgl-sub {
+  width: 86px;
+}
+
+.pk-main-table .col-idr,
+.pk-main-table .col-usd {
+  width: 95px;
+}
+
+.pk-red-star {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.pk-main-table tbody td {
+  font-weight: 700;
+  vertical-align: middle;
+}
+
+.pk-cell-center {
+  text-align: center;
+}
+
+.pk-cell-right {
+  text-align: right;
+}
+
+.pk-jumlah-row td {
+  font-weight: 700;
+  padding: 5px 8px;
+}
+
+.pk-jumlah-label {
+  text-align: right;
+  padding-right: 48px !important;
+  letter-spacing: 2px;
+}
+
+.pk-jumlah-idr,
+.pk-jumlah-usd {
+  text-align: right;
+}
+
+.pk-bottom-grid {
+  display: grid;
+  grid-template-columns: 38% 58%;
+  justify-content: space-between;
+  align-items: start;
+  margin-top: 8px;
+}
+
+.pk-disposisi-box {
+  border: 1px solid #444444;
+  min-height: 150px;
+  padding: 6px 8px;
+}
+
+.pk-disposisi-title {
+  font-size: 10px;
+  font-weight: 700;
+  text-decoration: underline;
+  margin-bottom: 6px;
+}
+
+.pk-disposisi-content {
+  font-size: 10.5px;
+  white-space: pre-wrap;
+}
+
+.pk-note-sign-col {
+  display: flex;
+  flex-direction: column;
+  font-size: 10.5px;
+}
+
+.pk-note-heading {
+  font-style: italic;
+  font-weight: 700;
+  text-decoration: underline;
+  margin-bottom: 6px;
+}
+
+.pk-note-list {
+  margin: 0 0 16px 16px;
+  padding: 0;
+  line-height: 1.45;
+}
+
+.pk-sign-date-line {
+  text-align: right;
+  padding-right: 28px;
+  margin-bottom: 8px;
+  font-size: 10.5px;
+}
+
+.pk-signatures-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 1fr;
+  gap: 10px;
+  font-size: 10.5px;
+}
+
+.pk-sign-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.pk-sign-space {
+  height: 44px;
+}
+
+@page {
+  size: A4 landscape;
+  margin: 10mm 12mm;
+}
+
+@media print {
+  html,
+  body {
+    background: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: auto !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .view-section,
+  .step-switcher-pill,
+  .toast-notification {
+    display: none !important;
+  }
+
+  .print-sheet {
+    display: block !important;
+    width: 100%;
   }
 }
